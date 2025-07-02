@@ -1,8 +1,10 @@
 import React, { useState, useCallback } from "react";
-import './App.css'
+import './App.css';
+
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import SearchResults from "../SearchResults/SearchResults.jsx";
 import Playlist from "../Playlist/Playlist.jsx";
+import Spotify from "../../util/Spotify.jsx";
 
 
 function App() {
@@ -43,9 +45,11 @@ function App() {
 
     return (
         <div>
-            <h1>Spotify App Project</h1>
+            <h1>
+                Spotify App Project
+            </h1>
             <div className="App">
-                <SearchBar onSearch={SearchBar} />
+                <SearchBar onSearch={search} />
                 <div className="App-playlist">
                     <SearchResults searchResults={searchResults} onAdd={addTrack} />
                     <Playlist 
